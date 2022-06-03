@@ -9,11 +9,13 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+//main data structure
 type Data struct {
 	Name      string      `json:"name"`
 	Character []Character `json:"character"`
 }
 
+//character data structure
 type Character struct {
 	Name      string `json:"name"`
 	Max_Power int    `json:"max_power"`
@@ -36,21 +38,6 @@ func main() {
 		c.JSON(http.StatusOK, avengers)
 	})
 
-	//Anti Heros section is removed because internal structure error
-	// go r.GET("/anti-heros", func(c *gin.Context) {
-
-	// 	var anti_hero Data
-
-	// 	resp, _ := http.Get("http://www.mocky.io/v2/5ecfd630320000f1aee3d64d")
-	// 	body, _ := ioutil.ReadAll(resp.Body)
-	// 	err := json.Unmarshal(body, &anti_hero)
-	// 	if err != nil {
-	// 		fmt.Println(err.Error())
-	// 	}
-	// 	data = append(data, anti_hero)
-	// 	c.JSON(http.StatusOK, anti_hero)
-	// })
-
 	go r.GET("/mutants", func(c *gin.Context) {
 
 		var mutants Data
@@ -69,5 +56,5 @@ func main() {
 
 	})
 
-	r.Run(":9009")
+	r.Run("localhost:9009")
 }
