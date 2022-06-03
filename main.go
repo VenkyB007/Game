@@ -36,19 +36,20 @@ func main() {
 		c.JSON(http.StatusOK, avengers)
 	})
 
-	go r.GET("/anti-heros", func(c *gin.Context) {
+	//Anti Heros section is removed because internal structure error
+	// go r.GET("/anti-heros", func(c *gin.Context) {
 
-		var anti_hero Data
+	// 	var anti_hero Data
 
-		resp, _ := http.Get("http://www.mocky.io/v2/5ecfd630320000f1aee3d64d")
-		body, _ := ioutil.ReadAll(resp.Body)
-		err := json.Unmarshal(body, &anti_hero)
-		if err != nil {
-			fmt.Println(err.Error())
-		}
-		data = append(data, anti_hero)
-		c.JSON(http.StatusOK, anti_hero)
-	})
+	// 	resp, _ := http.Get("http://www.mocky.io/v2/5ecfd630320000f1aee3d64d")
+	// 	body, _ := ioutil.ReadAll(resp.Body)
+	// 	err := json.Unmarshal(body, &anti_hero)
+	// 	if err != nil {
+	// 		fmt.Println(err.Error())
+	// 	}
+	// 	data = append(data, anti_hero)
+	// 	c.JSON(http.StatusOK, anti_hero)
+	// })
 
 	go r.GET("/mutants", func(c *gin.Context) {
 
