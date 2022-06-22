@@ -55,6 +55,10 @@ func main() {
 		c.JSON(http.StatusOK, data)
 
 	})
+	go r.GET("/get-all", func(c *gin.Context) {
+		c.JSON(http.StatusOK, data)
+
+	})
 
 	r.Run(":9009")
 }
