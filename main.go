@@ -21,6 +21,11 @@ type Character struct {
 	Max_Power int    `json:"max_power"`
 }
 
+type hCharacter struct {
+	Name      string `json:"name"`
+	Max_Power int    `json:"max_power"`
+}
+
 func main() {
 	r := gin.Default()
 	var data []Data
